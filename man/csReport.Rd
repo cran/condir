@@ -4,8 +4,14 @@
 \alias{csReport}
 \title{Report results of conditioning data}
 \usage{
-csReport(csCompareObj = NULL, csSensitivityObj = NULL, save = FALSE,
-  fileName = "report", alphaLevel = 0.05, interpretation = FALSE)
+csReport(
+  csCompareObj = NULL,
+  csSensitivityObj = NULL,
+  save = FALSE,
+  fileName = "report",
+  alphaLevel = 0.05,
+  interpretation = FALSE
+)
 }
 \arguments{
 \item{csCompareObj}{a list or data frame returned from
@@ -15,7 +21,7 @@ the \code{csCompare} function. The object should be of class csCompare.}
 \code{csSensitivity} function.  The object should be of class csSensitivity.}
 
 \item{save}{If \code{code} argument is set to \code{FALSE} (default), the
-results are printed on the sceen. Otherwise, a '.txt' file with the
+results are printed on the screen. Otherwise, a '.txt' file with the
 report is generated.}
 
 \item{fileName}{The file name of the produced report. The argument is
@@ -32,8 +38,8 @@ are interpreted according to Lee and Wagenmakers (2013).}
 Report results of data analyses run with the \code{csCompare}.
 }
 \examples{
+set.seed(1000)
 tmp <- csCompare(cs1 = rnorm(n = 100, mean = 10),
 cs2 = rnorm(n = 100, mean = 9))
 csReport(tmp)
 }
-

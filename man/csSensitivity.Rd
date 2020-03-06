@@ -4,9 +4,17 @@
 \alias{csSensitivity}
 \title{Sensitivity analysis for the Bayes Factors of \code{csCompare} results}
 \usage{
-csSensitivity(cs1, cs2, group = NULL, data = NULL,
-  alternative = "two.sided", conf.level = 0.95, mu = 0,
-  rscaleSens = c(0.707, 1, 1.41), out.thres = 3)
+csSensitivity(
+  cs1,
+  cs2,
+  group = NULL,
+  data = NULL,
+  alternative = "two.sided",
+  conf.level = 0.95,
+  mu = 0,
+  rscaleSens = c(0.707, 1, 1.41),
+  out.thres = 3
+)
 }
 \arguments{
 \item{cs1}{a numeric vector of values. If the \code{data} argument is
@@ -22,7 +30,7 @@ the data object. See \code{Details} for more information.}
 
 \item{data}{numeric matrix or data frame that contains the relevant data.}
 
-\item{alternative}{a character string for the speficication of
+\item{alternative}{a character string for the specification of
 the alternative hypothesis. Possible values: \code{"two.sided"} (default),
 \code{"greater"} or \code{"less"}.}
 
@@ -32,7 +40,7 @@ the alternative hypothesis. Possible values: \code{"two.sided"} (default),
 
 \item{rscaleSens}{the scale factor for the prior used in the Bayesian t.test}
 
-\item{out.thres}{The threeshold for detecting outliers (default is 3). If set
+\item{out.thres}{The threshold for detecting outliers (default is 3). If set
 to 0, no outliers analysis will be performed. See \code{Details} below for
 more information.}
 }
@@ -57,16 +65,17 @@ but, after removal of NA's (\code{stats::na.omit}), only one group
 is defined, a paired samples t-test is run.
 }
 \examples{
+set.seed(1000)
 csSensitivity(cs1 = rnorm(n = 100, mean = 10),
 cs2 = rnorm(n = 100, mean = 9))
 }
 \references{
-Krypotos, A.-M., Klugkist, I., & Engelhard, I. M. (submitted).Bayesian
-Hypothesis Testing for Human Threat Conditioning Research: An introduction
-and the condir R package.
+Krypotos, A. M., Klugkist, I., & Engelhard, I. M. (2017). 
+Bayesian hypothesis testing for human threat conditioning research: 
+An introduction and the condir R package. 
+European Journal of Psychotraumatology, 8.
 }
 \seealso{
 \code{\link[condir]{csCompare}}, \code{\link[stats]{t.test}},
 \code{\link[BayesFactor]{ttest.tstat}}
 }
-

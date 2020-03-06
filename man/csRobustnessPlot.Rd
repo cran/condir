@@ -2,12 +2,21 @@
 % Please edit documentation in R/csRobustnessPlot.R
 \name{csRobustnessPlot}
 \alias{csRobustnessPlot}
-\title{Plot robusteness results}
+\title{Plot robustness results}
 \usage{
-csRobustnessPlot(cs1, cs2, group = NULL, data = NULL,
-  alternative = "two.sided", conf.level = 0.95, mu = 0,
-  rscaleSens = c("medium", "wide", "ultrawide"), BF01 = TRUE, ylimz = c(0,
-  10), sensitivity = FALSE)
+csRobustnessPlot(
+  cs1,
+  cs2,
+  group = NULL,
+  data = NULL,
+  alternative = "two.sided",
+  conf.level = 0.95,
+  mu = 0,
+  rscaleSens = c("medium", "wide", "ultrawide"),
+  BF01 = TRUE,
+  ylimz = c(0, 10),
+  sensitivity = FALSE
+)
 }
 \arguments{
 \item{cs1}{a numeric vector of values. If the \code{data} argument is
@@ -23,7 +32,7 @@ the data object. See \code{Details} for more information.}
 
 \item{data}{numeric matrix or data frame that contains the relevant data.}
 
-\item{alternative}{a character string for the speficication of
+\item{alternative}{a character string for the specification of
 the alternative hypothesis. Possible values: \code{"two.sided"} (default),
 \code{"greater"} or \code{"less"}.}
 
@@ -52,15 +61,18 @@ BF01 is plotted (if \code{BF01} is set to TRUE) or
 BF10 (if \code{BF01} is set to FALSE).
 }
 \examples{
+set.seed(1000)
 csRobustnessPlot(cs1 = rnorm(n = 100, mean = 10),
 cs2 = rnorm(n = 100, mean = 9))
 }
 \references{
-Krypotos, A.-M., Klugkist, I., & Engelhard, I. M. (submitted).Bayesian
-Hypothesis Testing for Human Threat Conditioning Research: An introduction
-and the condir R package.
+JASP Team (2019). JASP (Version 0.11.1)[Computer software].
+
+Krypotos, A. M., Klugkist, I., & Engelhard, I. M. (2017). 
+Bayesian hypothesis testing for human threat conditioning research: 
+An introduction and the condir R package. 
+European Journal of Psychotraumatology, 8.
 }
 \seealso{
 \code{\link[condir]{csCompare}}, \code{\link[condir]{csSensitivity}}
 }
-
