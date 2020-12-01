@@ -1,9 +1,5 @@
 ## ----eval = FALSE-------------------------------------------------------------
-#  install.packages ("devtools")
-#  library(devtools)
-
-## ----eval = FALSE-------------------------------------------------------------
-#  install_github(repo = "AngelosPsy/condir")
+#  install.packages("condir")
 
 ## ----eval = TRUE--------------------------------------------------------------
 library(condir)
@@ -24,6 +20,7 @@ csPlot(cs1, cs2, ylab = "CRs")
 csReport(tmp)
 
 ## ----fig.width = 7.5, fig.height = 4, comment=NA------------------------------
+set.seed(1000)
 tmp <- csSensitivity(cs1, cs2)
 csRobustnessPlot(cs1, cs2, BF01 = TRUE)
 
@@ -31,6 +28,7 @@ csRobustnessPlot(cs1, cs2, BF01 = TRUE)
 csReport(csSensitivityObj = tmp)
 
 ## ----fig.width = 7.5, fig.height = 4, comment = NA----------------------------
+set.seed(1000)
 group <- factor(rep(1:2, length(cs1)/2))
 tmp <- csCompare(cs1, cs2, group = group)
 tmp
