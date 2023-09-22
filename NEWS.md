@@ -1,3 +1,7 @@
+# condir 0.1.4
+
+* All t-tests are now using the formula interface. This is in line with the dev version of R
+
 # condir 0.1.3
 
 Changes:
